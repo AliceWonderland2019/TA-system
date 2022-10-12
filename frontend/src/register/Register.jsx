@@ -35,20 +35,20 @@ export const Register = () => {
       setPassword(e.target.value);
       setSubmitted(false);
     };
- ß
+
 //   //Handling the form submission
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (userName === '' || lastName === '' || firstName === '' || password === '') {
-//       window.alert("Please fill out all the fields.");
-//     } else {
-//        setSubmitted(true);
-//         // window.alert("Successs.");
-//         setError(true);
-//         render();
-//         //Register(userName, firstName, lastName, password);    
-//     }
-//   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (userName === '' || lastName === '' || firstName === '' || password === '') {
+      window.alert("Please fill out all the fields.");
+    } else {
+       setSubmitted(true);
+        // window.alert("Successs.");
+        setError(true);
+        //render();
+        //Register(userName, firstName, lastName, password);    
+    }
+  };
 
 
 
