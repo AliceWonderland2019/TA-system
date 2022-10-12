@@ -2,6 +2,7 @@ import './App.css';
 import {  Route, Routes } from 'react-router-dom';
 import { LoginPage } from "./login/LoginPage";
 import { Register} from "./register/Register";
+import { Profile } from"./profile/Profile";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
     <Routes>
       <Route exact path="/" element={<LoginPage/>}/>
       <Route exact path="/register" element={<Register/>}/>
+      <Route exact path="/profile" element={<Profile/>} />
     </Routes>
     </div>
   );

@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(logMiddleware);
 
 // set up port
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
 // include authentification middleware
 const {

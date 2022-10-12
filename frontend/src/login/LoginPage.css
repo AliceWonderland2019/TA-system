@@ -1,13 +1,13 @@
 .Login-component {
     position: relative;
-    /* background-image: url(./loginImage.jpg); */
+    background-image:url('../background.png');
     /* Full height */
     width: 100vw;
     height: 100vh;
     /* Center and scale the image nicely */
-    /* background-position: center;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
     margin: 0;
 }
 .logo{
@@ -24,7 +24,4 @@
     transform: translate(-50%, -50%);
     padding: 2%;
     border-radius: 1rem;
-}
-text{
-
 }
