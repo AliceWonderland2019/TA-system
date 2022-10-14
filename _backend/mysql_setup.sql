@@ -7,7 +7,7 @@ create database db;
 CREATE TABLE
     `db`.`user` (
         `username` VARCHAR(45) NOT NULL,
-        `password` VARCHAR(100) NOT NULL,
+        `password` VARCHAR(100) NOT NULL, 
         PRIMARY KEY (`username`)
     );
 
@@ -25,13 +25,14 @@ CREATE TABLE
     `db`.`student` (
         `student_id` INTEGER NOT NULL,
         `username` VARCHAR(45) NOT NULL,
+        `firstname` VARCHAR(100),
+        `lastname` VARCHAR(100),
         `email` VARCHAR(15),
         `profile_pic` VARCHAR(500),
         `introduction` VARCHAR(500),
         PRIMARY KEY (`student_id`),
         FOREIGN KEY (`username`) REFERENCES `db`.`user`(`username`),
-        UNIQUE INDEX `id_UNIQUE` (`student_id` ASC) VISIBLE
-    );
+        UNIQUE INDEX `id_UNIQUE` (`student_id`));
 
 -- insert sample entry
 
@@ -43,10 +44,12 @@ CREATE TABLE
     `db`.`employee` (
         `employee_id` INTEGER NOT NULL,
         `username` VARCHAR(45) NOT NULL,
+        `firstname` VARCHAR(100),
+        `lastname` VARCHAR(100),
         `email` VARCHAR(15),
         PRIMARY KEY (`employee_id`),
         FOREIGN KEY (`username`) REFERENCES `db`.`user`(`username`),
-        UNIQUE INDEX `id_UNIQUE` (`employee_id` ASC) VISIBLE
+        UNIQUE INDEX `id_UNIQUE` (`employee_id`)
     );
 
 -- insert sample entry
@@ -58,7 +61,7 @@ VALUES ('employee1', '1234');
 CREATE TABLE
     `db`.`job` (
         `id` INTEGER NOT NULL AUTO_INCREMENT,
-        `employee_id` INTEGER NOT NULL,
+        `employee_id` INTEGER NOT NULL, 
         `course_id` VARCHAR(15) NOT NULL,
         `student_id` INTEGER,
         `introduction` VARCHAR(500),
@@ -85,7 +88,7 @@ CREATE TABLE
         `student_id` INTEGER NOT NULL,
         `hire` BOOLEAN,
         PRIMARY KEY (`id`),
-        UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+        UNIQUE INDEX `id_UNIQUE` (`id` ) ,
         FOREIGN KEY (`job_id`) REFERENCES job(`id`),
         FOREIGN KEY (`student_id`) REFERENCES student(`student_id`)
     );

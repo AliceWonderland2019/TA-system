@@ -20,8 +20,8 @@ export const Profile = () => {
 
     return(<div className="profileContainer">
         <div className="textContainer">
-            <h5>Hello!! UserName</h5>
-
+            <img src={"logo1(6).png"} className="logo"/>
+            <h1>Hello!! UserName</h1>
             <h5>FirstName: </h5>
             <h5>LastName: </h5>
             <h5>Email: </h5>

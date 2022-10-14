@@ -1,6 +1,7 @@
 import './LoginPage.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { checkAccount } from "../api/UserApi";
 
 export const LoginPage =()=>{
 
@@ -17,7 +18,7 @@ export const LoginPage =()=>{
     }
     
     const handleSubmitClick=()=>{
-        // checkAccount(email,password);
+         checkAccount(userName,password);
         // //login(email, password);
         // navigate('/home');
     }

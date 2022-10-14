@@ -6,11 +6,13 @@ const sessionRoutes = require("./routes/session");
 const healthRoute = require("./routes/health");
 const employeeRoutes = require("./routes/employee");
 const studentRoutes = require("./routes/student");
+const cors = require('cors');
 
 // create the express.js object
 const app = express();
 app.use(bodyParser.json());
 app.use(logMiddleware);
+app.use(cors());
 
 // set up port
 const port = process.env.PORT || 8000;
