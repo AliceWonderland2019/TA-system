@@ -14,7 +14,7 @@ router.post("/", async (req, res, next) => {
     let accessToken;
     const user = await User.authenticateUser(body.username, body.password);
     if (user === null) {
-      return user;
+       return res.status(401).json({message: "Wrong username&password"});
     }
     const students = await student.findUserByUsername(body.username);
     const employees = await employee.findUserByUsername(body.username);
