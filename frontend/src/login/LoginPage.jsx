@@ -23,6 +23,7 @@ export const LoginPage =()=>{
     const handleSubmitClick=()=>{
         localStorage.clear();
         checkAccount(userName,password);
+        // navigate('./studentHome');
     }
 
     return(

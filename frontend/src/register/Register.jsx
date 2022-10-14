@@ -14,7 +14,7 @@ export const Register = () => {
     // States for checking the errors
     const [submitted, setSubmitted] = useState(false);
     const [numError, setNumError] = useState(false);
-    const [error, setError] = useState(false);
+    //const [error, setError] = useState(false);
   
     // Handling the username change
     const handleUsername = (e) => {
@@ -67,11 +67,11 @@ export const Register = () => {
   //Handling the form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (userName === '' || password === '') {
-      window.alert("Please fill out User Name & Password.");
+    if (userName === '' || password === ''||ID ==='') {
+      window.alert("Please fill out User Name & Password & SMU ID.");
     } else {
       setSubmitted(true);
-      setError(true);
+      //setError(true);
       createAccountStudent(userName, password, firstName, lastName, ID);  
     }
   };
