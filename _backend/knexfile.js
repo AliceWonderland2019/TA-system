@@ -6,7 +6,7 @@ module.exports = {
       host : 'localhost',
       port : 3306,
       user : 'root',
-      password : '000914',
+      password : '19Corolla98!',
       insecureAuth: true,
       database : 'db'
     }

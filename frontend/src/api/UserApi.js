@@ -13,6 +13,7 @@ export const createAccountStudent = (userName,password,firstName,lastName,ID) =>
     axios.post('/user/student', {username:userName,password:password,firstname:firstName,lastname:lastName,student_id:ID},apiConfig)
         .then(x => resolve(x.data))
         .catch(x => {
+            console.log('bang')
             alert(x);
             reject(x);
         });

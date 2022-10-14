@@ -115,7 +115,7 @@ export const Register = () => {
     <br/>
   
     <div className="blocks">
-   <button variant="outlined" onClick={handleSubmit}>Create</button>
+   <button variant="outlined" onClick={handleSubmit}>Create account</button>
    <button variant="outlined"><Link to='/' className="LoginPage">Back</Link></button>
    </div>
    
