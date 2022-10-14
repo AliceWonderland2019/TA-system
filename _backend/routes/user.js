@@ -11,9 +11,10 @@ router.post("/student", async (req, res, next) => {
     console.log(body);
     await user.createNewUser(body.username, body.password);
     const result = student.createNewStudent(
+      body.firstname, 
+      body.lastname,
       body.username,
-      body.student_id,
-      body.email
+      body.student_id
     );
     res.status(201).json(result);
   } catch (err) {
@@ -30,9 +31,10 @@ router.post("/employee", async (req, res, next) => {
     console.log(body);
     await user.createNewUser(body.username, body.password);
     const result = employee.createNewEmployee(
+      body.firstname, 
+      body.lastname,
       body.username,
-      body.employee_id,
-      body.email
+      body.employee_id
     );
     res.status(201).json(result);
   } catch (err) {

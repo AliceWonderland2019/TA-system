@@ -1,3 +1,26 @@
 button{
     margin-right:30px;
 }
+p{
+    margin:0%;
+    color: #A52A2A;
+    font-size:12px;
+    font-weight:bold;
+
+}
+.Register-component {
+    position: relative;
+    background-image:url('../background.png');
+    /* Full height */
+    width: 100vw;
+    height: 100vh;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+.form{
+    margin-left: 150px;
+    margin-right: 150px;
+}
