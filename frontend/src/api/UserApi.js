@@ -2,15 +2,13 @@ import axios from 'axios';
 
 axios.defaults.baseURL='http://localhost:8000';
 const apiConfig={
-//     Authorization:'Bearer'
         headers:{
-            'Content-Type':'application/json;charset=utf-8',
-            // 'Access-Control-Allow-Origin':'http://localhost:3000'
+            Authorization:'Bearer ' + localStorage.getItem('token')
         }
   };
 
 export const createAccountStudent = (userName,password,firstName,lastName,ID) => new Promise((resolve, reject) => {
-    axios.post('/user/student', {username:userName,password:password,firstname:firstName,lastname:lastName,student_id:ID},apiConfig)
+    axios.post('/user/student', {username:userName,password:password,firstname:firstName,lastname:lastName,student_id:ID})
         .then(x => resolve(x.data))
         .catch(x => {
             alert(x);
@@ -18,18 +16,38 @@ export const createAccountStudent = (userName,password,firstName,lastName,ID) =>
         });
 });
 
-export const checkAccount = (userName,password) =>{
-    axios.post('/session',{userName:userName, password:password})
+export const checkAccount = (userName,password) =>new Promise((resolve, reject) =>{
+    axios.post('/session',{username:userName, password:password})
             .then(function(response){
                 if(response.status===201){
-                    window.alert("Successfully log in!!");
+                    //window.alert("Successfully log in!!");
                     localStorage.setItem('token',response.data);
+                    console.log(localStorage.token);
                 }
                 else{
                     window.alert("Logged with error");
                 }
             })
             .catch(function(error){
-                window.alert(error);
+                console.log(error)
+                if(error.response.status==401){
+                    window.alert("Unmatched username & password");
+                }
+                else{
+                    window.alert(error);
+                }
         });
-}
+});
+export const getUserInfo = () =>new Promise((resolve,reject)=>{
+    // var myToken=localStorage.getItem('token');
+        if( localStorage.token!=null){
+        // console.log(localStorage.token)
+        }
+    // axios.get(`${baseEndpoint}/nft/${id}`, apiConfig)
+    axios.get('/student', apiConfig)
+        .then(x => resolve(x.data))
+        .catch(x => {
+            alert(x);
+            reject(x);
+    });
+});
