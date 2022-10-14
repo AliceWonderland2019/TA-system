@@ -1,13 +1,16 @@
 import './LoginPage.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate} from 'react-router-dom';
 import { checkAccount } from "../api/UserApi";
+import { StudentHome } from '../home/StudentHome';
+
 
 export const LoginPage =()=>{
 
     // //localStorage.clear();
     const [userName, setName]=useState('');
     const [password, setPassword]=useState('');
+    const navigate=useNavigate();
 
     const handleChangeName=(e)=>{
         setName(e.target.value);
@@ -18,9 +21,9 @@ export const LoginPage =()=>{
     }
     
     const handleSubmitClick=()=>{
-         checkAccount(userName,password);
-        // //login(email, password);
-        // navigate('/home');
+        localStorage.clear();
+        checkAccount(userName,password);
+        // navigate('./studentHome');
     }
 
     return(
@@ -35,7 +38,7 @@ export const LoginPage =()=>{
         <input type="password" class="form-control" placeholder='Password' value={password} onChange={handleChangePW}/>
         <br/>
         <br/>
-    <button variant="outlined" onClick={handleSubmitClick}><Link to='./home' className="createLink">Submit</Link></button>
+    <button variant="outlined" onClick={handleSubmitClick}>Submit</button>
     <br/>
         <h6><Link to='/register' className="register">Don't have an account? Click here to make one!</Link></h6>
    </div>
