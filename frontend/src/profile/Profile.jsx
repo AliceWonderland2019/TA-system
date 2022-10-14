@@ -29,7 +29,8 @@ export const Profile = () => {
             <h5>Photo: </h5>
             <h5>New Password: </h5>
 
-            <button>Update</button><button>Back</button>
+            <button>Update</button>
+            <button><Link to='/studentHome'>Back</Link></button>
 
         </div>
     
