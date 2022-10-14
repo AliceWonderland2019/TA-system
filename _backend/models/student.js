@@ -1,11 +1,11 @@
 const knex = require('../knex.js');
 const STUDENT_TABLE = 'student';
 
-const createNewStudent = async (firstname, lastname, username, student_id) => {
+const createNewStudent = async (firstname, lastname, username, student_id) => { 
     const query = knex(STUDENT_TABLE).insert({firstname, lastname, username, student_id});
     console.log('Raw query for createNewStudentUser:', query.toString());
     const result = await query;
-    return result;
+    return result; 
 };
 
 const findUserByUsername = async (username) => {
