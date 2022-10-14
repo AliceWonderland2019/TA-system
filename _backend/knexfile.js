@@ -4,9 +4,9 @@ module.exports = {
     debug: true,
     connection: {
       host : 'localhost',
-      port : 3306,
+      port : 3308,
       user : 'root',
-      password : '000914',
+      password : '123456',
       insecureAuth: true,
       database : 'db'
     }
