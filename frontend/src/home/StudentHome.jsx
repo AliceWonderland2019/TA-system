@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react';
 import { getUserInfo } from "../api/UserApi";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const StudentHome = () => {
 
@@ -10,8 +10,8 @@ export const StudentHome = () => {
         getUserInfo().then(x => setUser(x))
     },[ ]);
   
-    if(!user){
-       return<>Please log in first</>
+     if(!user){
+        return<>Please log in first</>
     }
   
       return(<div className="HomeContainer">
