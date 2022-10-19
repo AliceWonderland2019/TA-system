@@ -6,12 +6,11 @@
 ### Initial Setup:
 #### First make sure to open a terminal window to ./backend and from there run yarn or `npm install` to install the necessary packages.
 
-### MySQL SetUp:
-#### Firstly, make sure you have Mysql downloaded.
-#### Secondly, Go to your Mysql database and run the transcript from ,/_backend/mysql_setup.sql.
-
 ### knexfile Setup:
-#### Go to Knexfile.js and change the connection variable to you own mysql account.
+#### Go to Knexfile.js and change the connection variable to your own mysql account.
+
+### MySQL SetUp:
+#### Run the transcript from ,/_backend/mysql_setup.sql.
 
 ## Frontend
 ### Initial Setup:
