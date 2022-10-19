@@ -21,4 +21,4 @@
 #### Open a terminal window to both ./_backend and ./frontend, then run:
 #### `npm start`
 
-#### Then, You are ready to go!:)
+#### Then, you are ready to go!:)
