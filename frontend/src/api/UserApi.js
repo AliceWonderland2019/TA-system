@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 axios.defaults.baseURL='http://localhost:8000';
-const apiConfig={
+let apiConfig={
         headers:{
             Authorization:'Bearer ' + localStorage.getItem('token')
         }
@@ -46,14 +46,32 @@ export const checkAccount = (userName,password) =>new Promise((resolve, reject) 
 });
 export const getUserInfo = () =>new Promise((resolve,reject)=>{
     // var myToken=localStorage.getItem('token');
-        if( localStorage.token!=null){
-        //console.log(localStorage.token)
-        }
-    // axios.get(`${baseEndpoint}/nft/${id}`, apiConfig)
+    let apiConfig={
+            headers:{
+                Authorization:'Bearer ' + localStorage.getItem('token')
+            }
+      };
+    //window.alert(localStorage.token);
     axios.get('/student', apiConfig)
         .then(x => resolve(x.data))
         .catch(x => {
             alert(x);
             reject(x);
+    });
+});
+
+export const updateImage = (photo) =>new Promise((resolve,reject)=>{
+    let apiConfig={
+        headers:{
+            Authorization:'Bearer ' + localStorage.getItem('token')
+        }
+  };
+    //window.alert(localStorage.token);
+    axios.put('/student/picture', {profile_pic:photo}, apiConfig)
+    .then(function(response){
+        console.log("Successfully changed!!");
+    })
+    .catch(function(error){
+        window.alert(error);
     });
 });

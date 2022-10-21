@@ -55,9 +55,8 @@ export const Register = () => {
       <div
         className="numError"
         style={{
-          display: numError ? "" : "none",
-        }}
-      >
+          display: numError ? '' : 'none',
+        }}>
         <p>*ID can only be numbers</p>
       </div>
     );
@@ -73,7 +72,7 @@ export const Register = () => {
       //setError(true);
       createAccountStudent(userName, password, firstName, lastName, ID);
     }
-  };
+  }
 
   return (
     <div className="Register-component">
@@ -107,23 +106,18 @@ export const Register = () => {
           <br />
           <br />
 
-          <label className="form-control">Last Name: </label>
-          <br />
-          <input type="text" value={lastName} onChange={handleLastName} />
-          <br />
-          <br />
-          <div className="register-buttons">
-            <button variant="outlined" onClick={handleSubmit}>
-              Create account
-            </button>
-            <button variant="outlined">
-              <Link to="/" className="LoginPage">
-                Back
-              </Link>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+    <label className="form-control">Last Name: </label>
+    <br/>
+    <input type="text" value={lastName} onChange={handleLastName}/>
+    <br/>
+    <br/>
+  
+    <div className="blocks">
+   <button variant="outlined" onClick={handleSubmit}>Create</button>
+   <button variant="outlined"><Link to='/' className="LoginPage">Back</Link></button>
+   </div>
+   
+   </div>
+   </div>
+    </div>);
+}

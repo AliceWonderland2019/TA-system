@@ -25,3 +25,28 @@
     border-radius: 1rem;
     margin: 5%;
 }
+.profilePic{
+    width:150px;
+    height:150px;
+    object-fit:cover;
+}
+.Row {
+    display: table;
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px; /*Optional*/
+}
+.Column {
+    display: table-cell;
+    position:relative;
+    
+}
+input{
+    margin-right:10px;
+}
+.smallp{
+    margin:0%;
+    color: #A52A2A;
+    font-size:13px;
+    font-weight:bold;
+    
+}
