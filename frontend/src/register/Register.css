@@ -74,7 +74,7 @@ input {
     background: #fff;
     font-size: smaller;
 }
-
+/*button hover effect*/
 .register-buttons button:hover {
     background: #354ea0;
     color: #fff;
