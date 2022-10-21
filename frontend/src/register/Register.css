@@ -1,7 +1,8 @@
-button{
-    margin-right:30px;
+* {
+    box-sizing: border-box;
 }
-p{
+
+p {
     margin:0%;
     color: #A52A2A;
     font-size:12px;
@@ -20,9 +21,9 @@ p{
     background-size: cover;
     margin: 0;
 }
-.form{
-    margin-left: 150px;
-    margin-right: 150px;
+.form {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .logo {
@@ -31,7 +32,7 @@ p{
     margin-right: auto;
 }
 
-h1 {
+h2 {
     text-align: center;
 }
 
@@ -42,24 +43,40 @@ h1 {
     width: 30rem;
     margin-left: auto;
     margin-right:auto;
+    padding-top: 1rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
     box-shadow: 0 15px 25px rgba(225, 60, 93, 0.7);
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 input {
     width: 100%;
     margin: auto;
-    padding: 2%;
+    padding: 0.25rem;
     border-radius: 0.5rem;
     border: solid;
     border-width: 1px;
     border-color: rgba(207, 31, 57, 1);
 }
 
-button {
-    border-color:rgba(207, 31, 57, 1);
+.register-buttons button {
+    width: 50%;
+    padding: .25rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6.75rem;
+    margin-bottom: 0.5rem;
+    border-color: #354ea0;
     border-radius: 0.5rem;
     color: #000;
     background: #fff;
+    font-size: smaller;
+}
 
+.register-buttons button:hover {
+    background: #354ea0;
+    color: #fff;
+    border: none;
 }
