@@ -10,7 +10,7 @@
     background-size: cover;
     margin: 0;
 }
-.logo{
+.logo { 
     position:relative;
     width: 180px;
 }
@@ -23,5 +23,35 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
     padding: 2%;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+.form-control {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-button {
+    width: 7.5rem;
+    height: 2rem;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: #354ea0;
+    border-radius: 0.5rem;
+}
+
+.login-button:hover {
+    background: #354ea0;
+    color: #fff;
+    border: none;
+}
+
+h6 {
+    text-align: center;
 }

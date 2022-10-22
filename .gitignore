@@ -1,7 +1,4 @@
-
+_backend/node_modules
 frontend/node_modules
 frontend/node_modules/.cache
-
-_backend/node_modules
-
 _backend/knexfile.js
