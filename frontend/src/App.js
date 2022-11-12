@@ -4,6 +4,8 @@ import { LoginPage } from "./login/LoginPage";
 import { Register} from "./register/Register";
 import { Profile } from"./profile/Profile";
 import { StudentHome } from"./home/StudentHome";
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
