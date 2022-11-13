@@ -13,7 +13,23 @@ router.get("/", async (req, res, next) => {
         res.status(500).json({ message: err.toString() });
     }
     next();
+}); 
+
+
+router.put('/update', async (req, res, next) => {
+    try {
+        const user = req.user; 
+        const body = req.body;
+        const result = await student.updateInfo(user.username, body.firstname, body.lastname, body.email, body.introduction)
+        res.status(200).json(result);
+    } catch (err){
+        console.error("Could not update info: ", err);
+        res.sendStatus(401).json({ message: err.toString() });
+    }
+    next();
 });
+
+
 
 router.put('/picture', async(req, res, next)=>{ //Change a rest_owner's address
     try{
