@@ -22,6 +22,48 @@ const findUserByStudentID = async (student_id) => {
     return result;
 };
 
+<<<<<<< Updated upstream
+=======
+// const updateInfo = async (username, firstname, lastname, email, introduction ) => {
+//     if(firstname){
+//         const result1 = await updateFirstName(username, firstname);
+//     }
+//     if(lastname){
+//         const result1 = await updateLastName(username, lastname);
+//     }
+//     if(email){
+//         const result1 = await updateEmail(username, email);
+//     }
+//     if(introduction){
+//         const result1 = await updateIntroduction(username, introduction);
+//     }
+//     const query = await findUserByUsername(username);
+//     console.log('Raw query for updateInfo:', query.toString());
+//     const result = await query;
+//     return result;
+// }
+
+const updateInfo = async (username, firstname, lastname, email, introduction ) => {
+    if(firstname){
+        const result1 = await updateFirstName(username, firstname);
+    }
+    if(lastname){
+        const result1 = await updateLastName(username, lastname);
+    }
+    if(email){
+        const result1 = await updateEmail(username, email);
+    }
+    if(introduction){
+        const result1 = await updateIntroduction(username, introduction);
+    }
+    const result = findUserByUsername(username);
+    return result;
+    // const query = await findUserByUsername(username);
+    // console.log('Raw query for updateInfo:', query.toString());
+    // const result = await query;
+    // return result;
+}
+>>>>>>> Stashed changes
 const updateProfilePicture = async (username, profile_pic) => {
     const query = await knex(STUDENT_TABLE).where({username}).update({profile_pic});
     console.log('Raw query for updateProfilePicture:', query.toString());
