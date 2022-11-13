@@ -1,0 +1,40 @@
+.NavContainer{
+    list-style-type: none;
+    margin:0;
+    margin-bottom: 15px;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(16, 41, 164);
+}
+.NavElements{
+    float:left;
+}
+.NavElements a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.NavElements a:hover {
+    background-color: #111;
+}
+.NavRight{
+    float:right;
+}
+.NavRight a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.NavLogOut a:hover {
+    background-color: rgb(57, 55, 55);
+}
+.logoNav { 
+    float:left;
+    width: 170px;
+    padding-right: 1%;
+    background-color: rgb(255, 255, 255);
+}

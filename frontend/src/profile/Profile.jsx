@@ -21,10 +21,12 @@ export const Profile = () => {
   const [submitted, setSubmitted] = useState(false);
   const [numError, setNumError] = useState(false);
   
+  //get user and update profile pic
   useEffect(()=>{
       getUserInfo().then(x => setUser(x));
   },[ update ]);
 
+  //render user information
   useEffect(()=>{
     if(user){
         setFirstName(user[0].firstname);
@@ -148,7 +150,7 @@ export const Profile = () => {
                 <input className="Column" type="text" value={ID} onChange={handleID} />
             </div>
             <h5>Introduction: </h5>
-            <input className="introduction" type="password" value={introduction} onChange={handleIntroduction} />
+            <input className="introduction" type="" value={introduction} onChange={handleIntroduction} />
             {/* <div className="Row">
                 <h5 className="Column">New Password: </h5>
                 <input className="Column" type="password" value={password} onChange={handlePassword} />

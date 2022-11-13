@@ -28,6 +28,7 @@ export const checkAccount = (userName,password) =>new Promise((resolve, reject) 
             .then(function(response){
                 if(response.status===201){
                     //window.alert("Successfully log in!!");
+                    //localStorage.clear();
                     localStorage.setItem('token',response.data);
                     window.location.href="./studentHome";
                 }
@@ -81,7 +82,7 @@ export const updateProfile=(firstName,lastName,email,introduction) =>new Promise
             Authorization:'Bearer ' + localStorage.getItem('token')
         }
   };
-  axios.put('/student/profile', {firstname:firstName,lastname:lastName,email:email,introduction:introduction},apiConfig)
+  axios.put('/student/update', {firstname:firstName,lastname:lastName,email:email,introduction:introduction},apiConfig)
   .then(function(response){
 
   })

@@ -35,12 +35,13 @@ const updateInfo = async (username, firstname, lastname, email, introduction ) =
     if(introduction){
         const result1 = await updateIntroduction(username, introduction);
     }
-    const query = await findUserByUsername(username);
-    console.log('Raw query for updateInfo:', query.toString());
-    const result = await query;
+    const result = findUserByUsername(username);
     return result;
+    // const query = await findUserByUsername(username);
+    // console.log('Raw query for updateInfo:', query.toString());
+    // const result = await query;
+    // return result;
 }
-
 const updateProfilePicture = async (username, profile_pic) => {
     const query = await knex(STUDENT_TABLE).where({username}).update({profile_pic});
     console.log('Raw query for updateProfilePicture:', query.toString());
