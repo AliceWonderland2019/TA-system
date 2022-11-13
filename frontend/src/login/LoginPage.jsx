@@ -19,9 +19,8 @@ export const LoginPage = () => {
   };
 
   const handleSubmitClick = () => {
-    localStorage.clear();
     checkAccount(userName, password);
-    // navigate('./studentHome');
+    //navigate('./studentHome');
   };
 
   return (
@@ -45,7 +44,7 @@ export const LoginPage = () => {
           onChange={handleChangePW}
         />
         <br />
-        <button class="login-button" type="submit" onClick={handleSubmitClick}>
+        <button className="login-button" type="submit" onClick={handleSubmitClick}>
           Submit
         </button>
         <br />
