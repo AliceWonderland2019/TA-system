@@ -14,7 +14,7 @@ export const createAccountStudent = (userName,password,firstName,lastName,ID) =>
             window.alert("Successfully registered");
         })
         .catch(function(error){
-            if(error.response.status===500){
+            if(error.response.status===400){
                 window.alert("Username already taken");
             }
             else{
@@ -74,4 +74,19 @@ export const updateImage = (photo) =>new Promise((resolve,reject)=>{
     .catch(function(error){
         window.alert(error);
     });
+});
+export const updateProfile=(firstName,lastName,email,introduction) =>new Promise((resolve,reject)=>{
+    let apiConfig={
+        headers:{
+            Authorization:'Bearer ' + localStorage.getItem('token')
+        }
+  };
+  axios.put('/student/profile', {firstname:firstName,lastname:lastName,email:email,introduction:introduction},apiConfig)
+  .then(function(response){
+
+  })
+  .catch(function(error){
+    window.alert(error);
+  })
+
 });

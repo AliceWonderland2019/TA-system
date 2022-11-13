@@ -116,6 +116,7 @@ export const Register = () => {
    <button variant="outlined" onClick={handleSubmit}>Create</button>
    <button variant="outlined"><Link to='/' className="LoginPage">Back</Link></button>
    </div>
+   <br/>
    
    </div>
    </div>
