@@ -1,5 +1,6 @@
 const express = require("express");
 const employee = require("../models/employee");
+const job = require("../models/job"); 
 const router = express.Router();
 
 router.get("/", async (req, res, next) => {
@@ -11,6 +12,17 @@ router.get("/", async (req, res, next) => {
     } catch (err) {
         console.error('Failed to get employee:', err);
         res.status(500).json({ message: err.toString() });
+    }
+    next();
+}); 
+
+router.get("/jobs", async (req, res, next) => {
+    try { 
+        const job_list = await job.fetchJob();
+        res.status(201).json(job_list);
+    } catch (err) {
+        console.error('Failed to get jobs:', err);
+        res.status(401).json({ message: err.toString() });
     }
     next();
 }); 
