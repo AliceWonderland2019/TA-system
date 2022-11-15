@@ -1,5 +1,6 @@
 const express = require("express");
-const student = require("../models/student");
+const student = require("../models/student"); 
+const job = require("../models/job"); 
 const router = express.Router();
 
 router.get("/", async (req, res, next) => {
@@ -15,12 +16,23 @@ router.get("/", async (req, res, next) => {
     next();
 }); 
 
+router.get("/jobs", async (req, res, next) => {
+    try { 
+        const job_list = await job.fetchJob();
+        res.status(201).json(job_list);
+    } catch (err) {
+        console.error('Failed to get jobs:', err);
+        res.status(401).json({ message: err.toString() });
+    }
+    next();
+}); 
+
 
 router.put('/update', async (req, res, next) => {
     try {
         const user = req.user; 
         const body = req.body;
-        const result = await student.updateInfo(user.username, body.firstname, body.lastname, body.email, body.introduction)
+        const result = await student.updateInfo(user.username, body.firstname, body.lastname, body.email, body.introduction);
         res.status(200).json(result);
     } catch (err){
         console.error("Could not update info: ", err);
