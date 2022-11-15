@@ -35,6 +35,8 @@ const updateInfo = async (username, firstname, lastname, email, introduction ) =
     if(introduction){
         const result1 = await updateIntroduction(username, introduction);
     }
+    // const result = findUserByUsername(username);
+    // return result;
     const query = await findUserByUsername(username);
     console.log('Raw query for updateInfo:', query.toString());
     const result = await query;

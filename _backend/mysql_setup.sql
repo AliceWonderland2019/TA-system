@@ -27,7 +27,7 @@ CREATE TABLE
         `username` VARCHAR(45) NOT NULL,
         `firstname` VARCHAR(100),
         `lastname` VARCHAR(100),
-        `email` VARCHAR(15),
+        `email` VARCHAR(50),
         `profile_pic` VARCHAR(10000),
         `introduction` VARCHAR(1000),
         PRIMARY KEY (`student_id`),
@@ -48,7 +48,7 @@ CREATE TABLE
         `lastname` VARCHAR(100),
         `profile_pic` VARCHAR(10000),
         `introduction` VARCHAR(1000),
-        `email` VARCHAR(15),
+        `email` VARCHAR(50),
         PRIMARY KEY (`employee_id`),
         FOREIGN KEY (`username`) REFERENCES `db`.`user`(`username`),
         UNIQUE INDEX `id_UNIQUE` (`employee_id`)
@@ -65,30 +65,39 @@ CREATE TABLE
         `id` INTEGER NOT NULL AUTO_INCREMENT,
         `employee_id` INTEGER NOT NULL, 
         `course_id` VARCHAR(15) NOT NULL,
-        `student_id` INTEGER,
+        `schedule` VARCHAR(50) NOT NULL, 
+        `posted_date` VARCHAR(15) NOT NULL, 
+        `status` INTEGER NOT NULL,
+        `course_name` VARCHAR(50),
+        `semster` VARCHAR(15),  
+        `salary` FLOAT,  
+        `deadline` VARCHAR(50),
+        `position` VARCHAR(50),
         `introduction` VARCHAR(1000),
         PRIMARY KEY (`id`),
         UNIQUE KEY `id_UNIQUE` (`id`),
-        FOREIGN KEY (`employee_id`) REFERENCES employee(`employee_id`),
-        FOREIGN KEY (`student_id`) REFERENCES student(`student_id`)
+        FOREIGN KEY (`employee_id`) REFERENCES employee(`employee_id`)
     );
 
 -- insert sample entry
-
 INSERT INTO
-    `db`.`job` (
-        `id`,
-        `employee_id`,
-        `course_id`
-    )
-VALUES ('1', '1234', 'CS1300');
+    `db`.`job` (`id`,`employee_id`, `course_id`,`schedule`, `posted_date`, `status`)
+VALUES ('1','1234', 'CS4345', 'MWF 11:00-12:00','NOV 13,2022', '1');
+
+-- INSERT INTO
+--     `db`.`job` (
+--         `id`,
+--         `employee_id`,
+--         `course_id`
+--     )
+-- VALUES ('1', '1234', 'CS1300');
 
 CREATE TABLE
     `db`.`application` (
         `id` INTEGER NOT NULL AUTO_INCREMENT,
         `job_id` INTEGER NOT NULL,
         `student_id` INTEGER NOT NULL,
-        `hire` BOOLEAN,
+        `status` INTEGER NOT NULL,
         PRIMARY KEY (`id`),
         UNIQUE INDEX `id_UNIQUE` (`id` ) ,
         FOREIGN KEY (`job_id`) REFERENCES job(`id`),
@@ -98,5 +107,5 @@ CREATE TABLE
 -- insert sample entry
 
 INSERT INTO
-    `db`.`application` (`id`, `job_id`, `student_id`)
-VALUES ('01', '1', '123456');
+    `db`.`application` (`id`, `job_id`, `student_id`,`status`)
+VALUES ('01', '1', '123456', '1');

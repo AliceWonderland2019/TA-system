@@ -20,7 +20,7 @@ router.put('/update', async (req, res, next) => {
     try {
         const user = req.user; 
         const body = req.body;
-        const result = await student.updateInfo(user.username, body.firstname, body.lastname, body.email, body.introduction)
+        const result = await student.updateInfo(user.username, body.firstname, body.lastname, body.email, body.introduction);
         res.status(200).json(result);
     } catch (err){
         console.error("Could not update info: ", err);
