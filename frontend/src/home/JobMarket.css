@@ -1,0 +1,30 @@
+#JobContainer{
+    display: flex;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+#JobContainer td, #JobContainer th {
+    border: 1px solid rgb(206, 204, 204);
+    padding: 8px;
+}
+  
+#JobContainer tr:nth-child(even){background-color: #f2f2f2;}
+  
+#JobContainer tr:hover {background-color: #ddd;}
+  
+#JobContainer th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #6f6f6f;
+    color: white;
+  }

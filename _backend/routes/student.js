@@ -1,6 +1,7 @@
 const express = require("express");
 const student = require("../models/student"); 
 const job = require("../models/job"); 
+const application = require("../models/application"); 
 const router = express.Router();
 
 router.get("/", async (req, res, next) => {
@@ -55,6 +56,7 @@ router.put('/picture', async(req, res, next)=>{ //Change a rest_owner's address
     }
     next();
 });
+
 router.delete('/picture', async(req, res, next)=>{
     try{
         const user = req.user;
@@ -69,4 +71,39 @@ router.delete('/picture', async(req, res, next)=>{
 
 });
 
+// job_id, student_id, status
+// create new application 
+router.post("/newapplications", async (req, res, next) => {
+    try {  
+        const body = req.body;
+        console.log(body); 
+        const result = application.createNewApplication(
+          body.job_id,
+          body.student_id,
+          body.status
+        );
+        res.status(201).json(result); 
+    } catch (err) {
+      console.error("Failed to create new application:", err);
+      res.status(500).json({ message: err.toString() });
+    }
+    next();
+  });
+
+// GET /student/job?name=[name]&id=[id]&schedule=[schedule]
+router.get("/job", async (req, res, next) => {
+    try {  
+        const course_name = req.query.course_name;
+        const course_id = req.query.course_id;
+        const schedule = req.query.schedule;
+        const result = await job.searchJob(course_name, course_id, schedule);
+        res.status(200).json(result);
+    } catch (err) {
+      console.error("Failed to create new application:", err);
+      res.status(500).json({ message: err.toString() });
+    }
+    next();
+  });
+
 module.exports = router;
+
