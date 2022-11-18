@@ -7,6 +7,7 @@ export const TextArea = ({ label, value, setValue }) => (
           name="value"
           id="value"
           className="form-control"
+          rows = "6"
           value={value}
           onChange={(event) => setValue(event.target.value)}
         />
