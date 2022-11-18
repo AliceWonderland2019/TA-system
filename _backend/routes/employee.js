@@ -14,7 +14,8 @@ router.get("/", async (req, res, next) => {
         res.status(500).json({ message: err.toString() });
     }
     next();
-}); 
+});   
+
 
 router.get("/jobs", async (req, res, next) => {
     try { 
@@ -65,5 +66,33 @@ router.delete('/picture', async(req, res, next)=>{
     next();
 
 });
+
+// employee_id, course_id, course_name, shcdule, posted_date, 
+// status, semster, salary, deadline, position, introduction
+// create new job
+router.post("/newjobs", async (req, res, next) => {
+    try {  
+        const body = req.body;
+        console.log(body); 
+        const result = job.createNewJob(
+          body.employee_id, 
+          body.course_id,
+          body.course_name,
+          body.schedule,
+          body.posted_date,
+          body.status,
+          body.semster,
+          body.salary,
+          body.deadline,
+          body.position,
+          body.introduction       
+        );
+        res.status(201).json(result); 
+    } catch (err) {
+      console.error("Failed to create new user:", err);
+      res.status(500).json({ message: err.toString() });
+    }
+    next();
+  });
 
 module.exports = router;

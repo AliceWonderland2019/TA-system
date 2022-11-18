@@ -1,12 +1,12 @@
 const knex = require('../knex.js');
 const EMPLOYEE_TABLE = 'employee';
 
-const createNewEmployee = async (username, employee_id, email) => { 
-    const query = knex(EMPLOYEE_TABLE).insert({username, employee_id, email});
+const createNewEmployee = async (firstname, lastname, username, employee_id) => { 
+    const query = knex(EMPLOYEE_TABLE).insert({firstname, lastname, username, employee_id});
     console.log('Raw query for createNewEmployee:', query.toString());
     const result = await query;
     return result; 
-};
+};  
 
 const findUserByUsername = async (username) => {
     const query = knex(EMPLOYEE_TABLE).where({username});
@@ -14,13 +14,15 @@ const findUserByUsername = async (username) => {
     const result = await query;
     return result;
 };
+ 
+
 
 const findUserByEmployeeID = async (employee_id) => {
-    const query = knex(STUDENT_TABLE).where({z});
+    const query = knex(EMPLOYEE_TABLE).where({employee_id});
     console.log('Raw query for findUserByEmployeeID:', query.toString());
     const result = await query;
     return result;
-};
+}; 
 
 const updateFirstName = async (username, firstname) => {
     const query = await knex(EMPLOYEE_TABLE).where({username}).update({firstname});
