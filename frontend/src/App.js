@@ -1,11 +1,10 @@
 import './App.css';
-import {  Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { LoginPage } from "./login/LoginPage";
 import { Register} from "./register/Register";
-import { Profile } from"./profile/Profile";
+import { Profile } from "./profile/Profile";
 import { StudentHome } from"./home/StudentHome";
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { PostJobPage } from "./postJob";
 
 function App() {
   return (
@@ -15,6 +14,8 @@ function App() {
       <Route exact path="/register" element={<Register/>}/>
       <Route exact path="/studentHome" element={<StudentHome/>}/>
       <Route exact path="/profile" element={<Profile/>} />
+      <Route exact path="/post-job" element={<PostJobPage/>} />
+      
     </Routes>
     </div>
   );
