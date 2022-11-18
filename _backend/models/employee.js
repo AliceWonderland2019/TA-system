@@ -14,8 +14,6 @@ const findUserByUsername = async (username) => {
     const result = await query;
     return result;
 };
- 
-
 
 const findUserByEmployeeID = async (employee_id) => {
     const query = knex(EMPLOYEE_TABLE).where({employee_id});

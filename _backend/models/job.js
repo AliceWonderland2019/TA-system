@@ -60,6 +60,7 @@ const searchJob = async (course_name, course_id, schedule) =>{
     }
     return results3;
 }
+
 module.exports = {
     fetchJob,
     createNewJob,

@@ -28,7 +28,6 @@ router.get("/jobs", async (req, res, next) => {
     next();
 }); 
 
-
 router.put('/update', async (req, res, next) => {
     try {
         const user = req.user; 
@@ -41,8 +40,6 @@ router.put('/update', async (req, res, next) => {
     }
     next();
 });
-
-
 
 router.put('/picture', async(req, res, next)=>{ //Change a rest_owner's address
     try{

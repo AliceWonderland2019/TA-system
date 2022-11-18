@@ -2,10 +2,8 @@ const knex = require('../knex.js');
 const APPPLICATION_TABLE = 'application';
 
 const fetchApplication = async () => {
-
     const query = knex(APPPLICATION_TABLE); 
     const result = await query; 
-
     return result;
 }
 
@@ -16,7 +14,6 @@ const createNewApplication = async (job_id, student_id, status) => {
     return result;
 } 
  
-
 module.exports = {
     fetchApplication,
     createNewApplication

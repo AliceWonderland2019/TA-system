@@ -78,7 +78,6 @@ const updateIntroduction = async (username, introduction) => {
     return result;
 }
 
-
 const deleteProfilePicture = async(username) =>{
     const query = knex(STUDENT_TABLE).where({username}).update({profile_pic: null}); 
     console.log('Raw query for deleteProfilePicture:', query.toString());

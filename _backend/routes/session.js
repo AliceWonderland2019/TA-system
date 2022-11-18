@@ -4,7 +4,6 @@ const student = require("../models/student");
 const employee = require("../models/employee");
 const { authenticateJWT } = require("../middleware/auth");
 const jwt = require("jsonwebtoken");
-
 const router = express.Router();
 
 router.post("/", async (req, res, next) => {
@@ -48,7 +47,5 @@ router.get("/", authenticateJWT, async (req, res, next) => {
   }
   next();
 });
-
-
 
 module.exports = router;

@@ -53,6 +53,7 @@ router.put('/picture', async(req, res, next)=>{ //Change a rest_owner's address
     }
     next();
 });
+
 router.delete('/picture', async(req, res, next)=>{
     try{
         const user = req.user;
@@ -108,6 +109,6 @@ router.get("/job", async (req, res, next) => {
       res.status(500).json({ message: err.toString() });
     }
     next();
-  });
+});
 
 module.exports = router;
