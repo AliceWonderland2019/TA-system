@@ -76,6 +76,7 @@ export const updateImage = (photo) =>new Promise((resolve,reject)=>{
         window.alert(error);
     });
 });
+
 export const updateProfile=(firstName,lastName,email,introduction) =>new Promise((resolve,reject)=>{
     let apiConfig={
         headers:{
@@ -89,5 +90,13 @@ export const updateProfile=(firstName,lastName,email,introduction) =>new Promise
   .catch(function(error){
     window.alert(error);
   })
-
 });
+
+export const addApplication = (application) => new Promise((resolve, reject) => {
+    axios.post(`/studnet/newapplications`, application, apiConfig) //根据链接里的id返回整个account
+        .then(x => resolve(x.data))
+        .catch(x => {
+            alert(x);
+            reject(x);
+        });
+}); //method
