@@ -5,16 +5,15 @@ import { addApplication } from "../api/UserApi"
 import { Application } from "./Application"
 
 export const ApplyToJob = () => {
-  const { application, setApplication} = useState("");
-  const { studentID, setStudentID } = useState("");
-  const { jobID, setJobID } = useState("");
-  const { status, setStatus } = useState("");
-  const { reason, setReason } = useState("");
-  const { introduction, setIntroduction} = useState("");
-  const { firstName, setFirstName } = useState("");
-  const { lastName, setLastName } = useState("");
-  const { major, setMajor } = useState("");
-  const { schoolYear, setSchoolYear } = useState("");
+  const [ studentID, setStudentID ] = useState("");
+  const [ jobID, setJobID ] = useState("");
+  const [ status, setStatus ] = useState("1");
+  const [ reason, setReason ] = useState("");
+  const [ introduction, setIntroduction ] = useState("");
+  const [ firstName, setFirstName ] = useState("");
+  const [ lastName, setLastName ]  = useState("");
+  const [ major, setMajor ]  = useState("");
+  const [ schoolYear, setSchoolYear ] = useState("");
   const shoolYearOptions = [
     { value: 1, label: "Freshman" },
     { value: 2, label: "Sophomore" },
@@ -24,7 +23,6 @@ export const ApplyToJob = () => {
   ]
 
   useEffect(() => {
-    addApplication({})
   }, []);
 
   const navigate = useNavigate();
@@ -42,8 +40,8 @@ export const ApplyToJob = () => {
         <div className="row mx-auto align-items-center">
           <TextField
             label="Job ID:"
-            value={jobID}
-            setValue={setJobID}
+            value={ jobID }
+            setValue={ setJobID }
             required
           />
         </div>
