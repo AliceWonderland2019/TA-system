@@ -33,15 +33,15 @@ router.post("/student", async (req, res, next) => {
 
 // create new employee account
 router.post("/employee", async (req, res, next) => {
-  try {
+  try { 
+    const body = req.body;
+    console.log(body.employee_id);
     const existID1 = await employee.findUserByEmployeeID(body.employee_id); 
     if(existID1.length != 0){
         console.error("Employee ID already in use."); 
         res.status(400).json({ message: err.toString() });
     } 
-    else{
-      const body = req.body;
-      console.log(body);
+    else{ 
       await user.createNewUser(body.username, body.password);
       const result = employee.createNewEmployee(
         body.firstname, 
