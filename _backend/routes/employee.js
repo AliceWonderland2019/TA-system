@@ -89,7 +89,7 @@ router.post("/newjobs", async (req, res, next) => {
         );
         res.status(201).json(result); 
     } catch (err) {
-      console.error("Failed to create new user:", err);
+      console.error("Failed to create new job:", err);
       res.status(500).json({ message: err.toString() });
     }
     next();
