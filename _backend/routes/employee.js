@@ -95,4 +95,19 @@ router.post("/newjobs", async (req, res, next) => {
     next();
   });
 
+// GET /employee/job?name=[name]&id=[id]&schedule=[schedule]
+router.get("/job", async (req, res, next) => {
+    try {  
+        const course_name = req.query.course_name;
+        const course_id = req.query.course_id;
+        const schedule = req.query.schedule;
+        const result = await job.searchJob(name, id, schedule);
+        res.status(200).json(result);
+    } catch (err) {
+      console.error("Failed to create new application:", err);
+      res.status(500).json({ message: err.toString() });
+    }
+    next();
+  });
+
 module.exports = router;
