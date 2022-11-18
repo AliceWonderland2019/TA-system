@@ -56,6 +56,7 @@ router.put('/picture', async(req, res, next)=>{ //Change a rest_owner's address
     }
     next();
 });
+
 router.delete('/picture', async(req, res, next)=>{
     try{
         const user = req.user;
@@ -69,6 +70,7 @@ router.delete('/picture', async(req, res, next)=>{
     next();
 
 });
+
 // job_id, student_id, status
 // create new application 
 router.post("/newapplications", async (req, res, next) => {
@@ -88,4 +90,20 @@ router.post("/newapplications", async (req, res, next) => {
     next();
   });
 
+// GET /student/job?name=[name]&id=[id]&schedule=[schedule]
+router.get("/job", async (req, res, next) => {
+    try {  
+        const course_name = req.query.course_name;
+        const course_id = req.query.course_id;
+        const schedule = req.query.schedule;
+        const result = await job.searchJob(name, id, schedule);
+        res.status(200).json(result);
+    } catch (err) {
+      console.error("Failed to create new application:", err);
+      res.status(500).json({ message: err.toString() });
+    }
+    next();
+  });
+
 module.exports = router;
+

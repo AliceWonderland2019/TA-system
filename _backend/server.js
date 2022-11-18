@@ -27,7 +27,7 @@ const {
 app.use("/health", healthRoute);
 app.use("/user", userRoutes);
 app.use("/session", sessionRoutes);
-// app.use('/employee', authenticateWithClaims(['employee']), employeeRoutes);
+app.use('/employee', authenticateWithClaims(['employee']), employeeRoutes);
 app.use("/student", authenticateWithClaims(["student"]), studentRoutes);
 
 // connecting the express object to listen on a particular port as defined in the config object.
