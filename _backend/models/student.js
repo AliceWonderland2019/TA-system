@@ -42,7 +42,6 @@ const updateInfo = async (username, firstname, lastname, email, introduction ) =
     // const result = await query;
     // return result;
 }
-
 const updateProfilePicture = async (username, profile_pic) => {
     const query = await knex(STUDENT_TABLE).where({username}).update({profile_pic});
     console.log('Raw query for updateProfilePicture:', query.toString());

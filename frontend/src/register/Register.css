@@ -46,7 +46,7 @@ h2 {
     padding-top: 1rem;
     padding-bottom: 0;
     margin-bottom: 0;
-    box-shadow: 0 15px 25px rgba(225, 60, 93, 0.7);
+    box-shadow: 0 15px 25px rgba(81, 70, 72, 0.7);
     border-radius: 0.5rem;
 }
 
@@ -80,3 +80,6 @@ input {
     color: #fff;
     border: none;
 }
+/* button{
+    margin:5%;
+} */

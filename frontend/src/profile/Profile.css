@@ -3,7 +3,7 @@
     background-image:url('../background.png');
     /* Full height */
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
@@ -38,7 +38,6 @@
 .Column {
     display: table-cell;
     position:relative;
-    
 }
 input{
     margin-right:10px;
@@ -49,4 +48,11 @@ input{
     font-size:13px;
     font-weight:bold;
     
+}
+.introduction{
+    width:80%;
+    height:100px;
+}
+.updatePhoto{
+    width:50%
 }
