@@ -101,7 +101,7 @@ router.get("/job", async (req, res, next) => {
         const course_name = req.query.course_name;
         const course_id = req.query.course_id;
         const schedule = req.query.schedule;
-        const result = await job.searchJob(name, id, schedule);
+        const result = await job.searchJob(course_name, course_id, schedule);
         res.status(200).json(result);
     } catch (err) {
       console.error("Failed to create new application:", err);
