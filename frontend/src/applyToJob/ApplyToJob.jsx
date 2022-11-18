@@ -6,6 +6,15 @@ import { Application } from "./Application"
 
 export const ApplyToJob = () => {
   const { application, setApplication} = useState("");
+  const { studentID, setStudentID } = useState("");
+  const { jobID, setJobID } = useState("");
+  const { status, setStatus } = useState("");
+  const { reason, setReason } = useState("");
+  const { introduction, setIntroduction} = useState("");
+  const { firstName, setFirstName } = useState("");
+  const { lastName, setLastName } = useState("");
+  const { major, setMajor } = useState("");
+  const { schoolYear, setSchoolYear } = useState("");
   const shoolYearOptions = [
     { value: 1, label: "Freshman" },
     { value: 2, label: "Sophomore" },
@@ -21,10 +30,8 @@ export const ApplyToJob = () => {
   const navigate = useNavigate();
 
   const handleApplyClick = () => {
-    addApplication(application).then(x => navigate('/studentHome'));
+    addApplication(new Application(jobID, studentID, status, firstName, lastName, major, schoolYear, reason, introduction)).then(x => navigate('/studentHome'));
   }
-
-  const merge = delta => setApplication({ ...application, ...delta });
 
   return (
     <>
@@ -35,16 +42,16 @@ export const ApplyToJob = () => {
         <div className="row mx-auto align-items-center">
           <TextField
             label="Job ID:"
-            value={application.job_id}
-            setValue={ job_id => merge({ job_id })}
+            value={jobID}
+            setValue={setJobID}
             required
           />
         </div>
         <div className="row mx-auto align-items-center">
           <TextField
             label="Student ID:"
-            value={application.student_id}
-            setValue={student_id => merge({ student_id })}
+            value={studentID}
+            setValue={setStudentID}
             required
           />
         </div>
@@ -52,16 +59,16 @@ export const ApplyToJob = () => {
           <div className="col">
             <TextField
               label="First name:"
-              value={application.firstname}
-              setValue={firstname => merge({ firstname })}
+              value={firstName}
+              setValue={setFirstName}
               required
             />
           </div>
           <div className="col">
             <TextField
               label="Last name:"
-              value={application.lastname}
-              setValue={lastname => merge({ lastname })}
+              value={lastName}
+              setValue={setLastName}
               required
             />
           </div>
@@ -70,16 +77,16 @@ export const ApplyToJob = () => {
           <div className="col">
             <TextField
               label="Major:"
-              value={application.major}
-              setValue={major => merge({ major })}
+              value={major}
+              setValue={setMajor}
               required
             />
           </div>
           <div className="col">
             <SelectField
               label="School Year:"
-              value={application.schoolyear}
-              setValue={schoolyear => merge({ schoolyear })}
+              value={schoolYear}
+              setValue={setSchoolYear}
               options={shoolYearOptions}
               optionValueKey="value"
               optionLabelKey="label"
@@ -90,16 +97,16 @@ export const ApplyToJob = () => {
         <div className="row mx-auto align-items-center">
           <TextArea
             label="Briefly explain why you want to be a TA:"
-            value={application.reason}
-            setValue={reason => merge({ reason })}
+            value={reason}
+            setValue={setReason}
             required
           />
         </div>
         <div className="row mx-auto align-items-center">
           <TextArea
             label="Briefly introduce yourself:"
-            value={application.introduction}
-            setValue={introduction => merge({ introduction })}
+            value={introduction}
+            setValue={setIntroduction}
             required
           />
         </div>
@@ -117,7 +124,9 @@ export const ApplyToJob = () => {
             <button
               type="button"
               className="form-button-cancel"
-              onClick={() => { navigate('/studentHome')}}
+              onClick={() => {
+                navigate('/studentHome')
+              }}
             >
               Cancel
             </button>
