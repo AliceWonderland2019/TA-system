@@ -9,8 +9,8 @@ const fetchApplication = async () => {
     return result;
 }
 
-const createNewApplication = async (job_id, student_id, status) => {
-    const query = knex(APPPLICATION_TABLE).insert({job_id, student_id, status}); 
+const createNewApplication = async (job_id, student_id, status, firstname, lastname, major, schoolyear, reason, introduction) => {
+    const query = knex(APPPLICATION_TABLE).insert({job_id, student_id, status, firstname, lastname, major, schoolyear, reason, introduction}); 
     console.log('Raw query for createNewApplication:', query.toString());
     const result = await query; 
     return result;

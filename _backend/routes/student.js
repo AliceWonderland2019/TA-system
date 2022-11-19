@@ -80,7 +80,13 @@ router.post("/newapplications", async (req, res, next) => {
         const result = application.createNewApplication(
           body.job_id,
           body.student_id,
-          body.status
+          body.status,
+          body.firstname,
+          body.lastname,
+          body.major,
+          body.schoolyear,
+          body.reason,
+          body.introduction
         );
         res.status(201).json(result); 
     } catch (err) {

@@ -93,7 +93,13 @@ export const updateProfile=(firstName,lastName,email,introduction) =>new Promise
 });
 
 export const addApplication = (application) => new Promise((resolve, reject) => {
-    axios.post(`/studnet/newapplications`, application, apiConfig) //根据链接里的id返回整个account
+    let apiConfig={
+        headers:{
+            Authorization:'Bearer ' + localStorage.getItem('token')
+        }
+    };
+    console.log(application);
+    axios.post(`/student/newapplications`, application, apiConfig) //根据链接里的id返回整个account
         .then(x => resolve(x.data))
         .catch(x => {
             alert(x);

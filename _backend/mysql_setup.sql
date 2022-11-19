@@ -1,9 +1,7 @@
-USE db;
-
 drop database db;
 
 create database db;
-
+USE db;
 CREATE TABLE
     `db`.`user` (
         `username` VARCHAR(45) NOT NULL,
@@ -249,10 +247,10 @@ CREATE TABLE
         `job_id` INTEGER NOT NULL,
         `student_id` INTEGER NOT NULL,
         `status` INTEGER NOT NULL,
-        `firstname`,
-        `lastname`,
-        `major`,
-        `schoolyear`,
+        `firstname` VARCHAR(100),
+        `lastname` VARCHAR(100),
+        `major` VARCHAR(100),
+        `schoolyear` VARCHAR(100),
         `reason` VARCHAR(500),
         `introduction` VARCHAR(500),
         PRIMARY KEY (`id`),
