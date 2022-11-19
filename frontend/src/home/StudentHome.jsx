@@ -3,6 +3,7 @@ import { useState,useEffect } from 'react';
 import { getUserInfo } from "../api/UserApi";
 import {StudentNavBar} from "../Navbar/StudentNavBar";
 import { JobMarket } from "./JobMarket";
+import { SearchField } from "./SearchField";
 import {getJobList} from "../api/JobApi";
 
 export const StudentHome = () => {
@@ -26,6 +27,7 @@ export const StudentHome = () => {
         <StudentNavBar/>
           <div className="MainContainer">
               <h1>Hello!! {user[0].username}</h1>      
+              <SearchField/>
               <JobMarket Jobs={Jobs}/>
           </div>
       </div>
