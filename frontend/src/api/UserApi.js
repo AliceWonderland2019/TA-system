@@ -106,3 +106,18 @@ export const addApplication = (application) => new Promise((resolve, reject) => 
             reject(x);
         });
 }); //method
+
+// post a job
+export const createJob = (job) => new Promise((resolve, reject) => {
+    let apiConfig={
+        headers:{
+            Authorization:'Bearer ' + localStorage.getItem('token')
+        }
+};
+axios.post(`/employee/newjobs`, job, apiConfig)
+    .then(x => resolve(x.data))
+    .catch(x => {
+        alert(x);
+        reject(x);
+    });
+});

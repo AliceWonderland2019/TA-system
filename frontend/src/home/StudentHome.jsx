@@ -5,7 +5,6 @@ import {StudentNavBar} from "../Navbar/StudentNavBar";
 import { JobMarket } from "./JobMarket";
 import { SearchResult } from "./SearchResult";
 import { SearchField } from "./SearchField";
-
 export const StudentHome = () => {
 
     const [user, setUser]=useState("");
@@ -52,6 +51,5 @@ export const StudentHome = () => {
               <div className="search">{searchFun(courseID,schedule,semester)}</div>
         </div>
       </div>
-  
       );
   }
