@@ -58,4 +58,28 @@ router.post("/employee", async (req, res, next) => {
   next();
 });
 
+// router.get("/jobs/:course_id", async (req, res, next) => {
+//   try {
+//       const result = await job.findJobByID(course_id);
+//       res.status(200).json(result);
+//   } catch (err) {
+//     console.error("Failed to load job:", err);
+//     res.status(500).json({ message: err.toString() });
+//   }
+//   next();
+// });
+
+// router.get("/", async (req, res, next) => {
+//   try {
+//       const user = req.user;
+//       console.log("user:", user);
+//       const the_student = await student.findUserByUsername(user.username);
+//       res.status(201).json(the_student);
+//   } catch (err) {
+//       console.error('Failed to get student:', err);
+//       res.status(500).json({ message: err.toString() });
+//   }
+//   next();
+// }); 
+
 module.exports = router;

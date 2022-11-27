@@ -16,9 +16,6 @@
     padding: 14px 16px;
     text-decoration: none;
 }
-.NavElements a:hover {
-    background-color: #111;
-}
 .NavRight{
     float:right;
 }
@@ -29,12 +26,12 @@
     padding: 14px 16px;
     text-decoration: none;
 }
-.NavLogOut a:hover {
-    background-color: rgb(57, 55, 55);
+.NavLog a:hover {
+    background-color: rgb(64, 62, 62);
 }
 .logoNav { 
     float:left;
-    width: 170px;
+    width: 190px;
     padding-right: 1%;
     background-color: rgb(255, 255, 255);
 }

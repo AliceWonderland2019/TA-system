@@ -13,7 +13,7 @@ export const StudentNavBar = ( )=>{
             <img src={"logo1(6).png"} className="logoNav"/>
             <div className="NavElements"><Link to ='/studentHome'>Jobs Market</Link></div>
             <div className="NavElements"><Link to ='/studentHome'>Employers</Link></div>
-            <div className="NavRight"><Link to ='/' onClick={handleLogOut}><button className="logNav">Log out</button></Link></div>
+            <div className="NavRight"><Link to ='/' onClick={handleLogOut}><button className="NavLog">Log out</button></Link></div>
             <div className="NavRight"><Link to ='/'>Message</Link></div>
             <div className="NavRight"><Link to ='/profile'>Profile</Link></div>
             <div className="NavRight"><Link to ='/'>MyApplications</Link></div>

@@ -28,9 +28,10 @@ export const LoginPage = () => {
       <div className="whiteBox">
         <img src={"logo1(6).png"} className="logo" />
         <h1>Log In</h1>
+        <div className="form">
         <input
           type="text"
-          class="form-control"
+          className="form-control-name"
           placeholder="User Name"
           value={userName}
           onChange={handleChangeName}
@@ -38,11 +39,12 @@ export const LoginPage = () => {
         <br />
         <input
           type="password"
-          class="form-control"
+          className="form-control-password"
           placeholder="Password"
           value={password}
           onChange={handleChangePW}
         />
+        </div>
         <br />
         <button className="login-button" type="submit" onClick={handleSubmitClick}>
           Submit
