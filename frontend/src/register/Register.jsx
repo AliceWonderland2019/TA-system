@@ -57,7 +57,7 @@ export const Register = () => {
         style={{
           display: numError ? '' : 'none',
         }}>
-        <p>*ID can only be numbers</p>
+        <p className="errorMeg">*ID can only be numbers</p>
       </div>
     );
   };
@@ -79,42 +79,36 @@ export const Register = () => {
       <div className="whiteBox">
         <img src={"logo1(6).png"} className="logo" />
         <h2>Register</h2>
-
+        <br />
         <div className="form">
-          <label className="form-control">*User Name:</label>
-          <br />
+          <label className="">*User Name:</label>
           <input type="text" value={userName} onChange={handleUsername} />
           <br />
           <br />
-
-          <label className="form-control">*Password:</label>
-          <br />
+          <label className="">*Password:</label>
           <input type="password" value={password} onChange={handlePassword} />
           <br />
           <br />
 
-          <label className="form-control">*SMU ID:</label>
-          <br />
+          <label className="">*SMU ID:</label>
           <div className="message">{errorNum()}</div>
           <input type="text" value={ID} onChange={handleID} />
           <br />
           <br />
 
-          <label className="form-control">FirstName:</label>
-          <br />
+          <label className="">FirstName:</label>
           <input type="text" value={firstName} onChange={handleFirstName} />
           <br />
           <br />
 
-    <label className="form-control">Last Name: </label>
-    <br/>
+    <label className="">Last Name: </label>
     <input type="text" value={lastName} onChange={handleLastName}/>
     <br/>
     <br/>
   
     <div className="register-buttons">
    <button variant="outlined" onClick={handleSubmit}>Create</button>
-   <button variant="outlined"><Link to='/' className="LoginPage">Back</Link></button>
+   <Link to='/' className="LoginPage"><button variant="outlined">Back</button></Link>
    </div>
    <br/>
    

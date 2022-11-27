@@ -1,13 +1,14 @@
 import "./JobMarket.css";
 import { useState,useEffect } from 'react';
-import {getJobList} from "../api/JobApi";
+import {getJobs} from "../api/JobApi";
 
-export const JobMarket = ({ }) => {
+export const SearchResult = ({ courseID,schedule,semester}) => {
     const [Jobs, setJobs ]=useState([]);
 
     useEffect(()=>{
-        getJobList().then(y => setJobs(y));
-    },[ ]);
+        console.log(courseID,schedule,semester);
+        getJobs(courseID,schedule,semester).then(y => setJobs(y));
+    },[courseID,schedule,semester ]);
 
     return<>   
         <div id="JobContainer">
