@@ -1,9 +1,6 @@
 import "./SearchField.css";
-import React, {useContext, useState} from "react";
+import React, {useState} from "react";
 import {SelectField} from "../postJob/SelectField";
-import { searchJob } from "../api/JobApi";
-// import { JobContext } from "./context-manager";
-
 
 export const SearchField = ( props ) => {
 
@@ -12,7 +9,6 @@ export const SearchField = ( props ) => {
     const [catalog,setCatalog]=useState("");
     const [schedule,setSchedule]=useState("");
     const [semester,setSemester]=useState("");
-    const [submitted, setSubmitted] = useState(false);
     const deptOptions=[
         { value: "BIOL", label: "BIOL"},
         { value: "CEE", label: "CEE"},
@@ -61,10 +57,10 @@ export const SearchField = ( props ) => {
       if(department===""&&catalog===""){
             //not searching
       }
-      else if(department!=""&&catalog===""){
+      else if(department!==""&&catalog===""){
         props.getCourseID(department);
       }
-      else if(department===""&&catalog!=""){
+      else if(department===""&&catalog!==""){
         props.getCourseID(catalog);
       }
       else{

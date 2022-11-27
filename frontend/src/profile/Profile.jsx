@@ -1,7 +1,7 @@
 import './Profile.css';
 
 import { Link } from 'react-router-dom';
-import{ useState,useEffect, Children } from 'react';
+import{ useState,useEffect} from 'react';
 import { getUserInfo } from "../api/UserApi";
 import { updateImage } from '../api/UserApi';
 import { updateProfile } from '../api/UserApi';

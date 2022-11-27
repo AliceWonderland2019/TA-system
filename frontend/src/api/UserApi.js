@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-axios.defaults.baseURL='http://localhost:8000';
-let apiConfig={
-        headers:{
-            Authorization:'Bearer ' + localStorage.getItem('token')
-        }
-  };
+// axios.defaults.baseURL='http://localhost:8000';
+// let apiConfig={
+//         headers:{
+//             Authorization:'Bearer ' + localStorage.getItem('token')
+//         }
+//   };
 
 export const createAccountStudent = (userName,password,firstName,lastName,ID) => new Promise((resolve, reject) => {
     axios.post('/user/student', {username:userName,password:password,firstname:firstName,lastname:lastName,student_id:ID})

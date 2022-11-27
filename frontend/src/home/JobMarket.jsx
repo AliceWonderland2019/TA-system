@@ -2,7 +2,7 @@ import "./JobMarket.css";
 import { useState,useEffect } from 'react';
 import {getJobList} from "../api/JobApi";
 
-export const JobMarket = ({ }) => {
+export const JobMarket = () => {
     const [Jobs, setJobs ]=useState([]);
 
     useEffect(()=>{
