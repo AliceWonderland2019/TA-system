@@ -1,14 +1,12 @@
 import "./LoginPage.css";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { checkAccount } from "../api/UserApi";
-import { StudentHome } from "../home/StudentHome";
 
 export const LoginPage = () => {
   // //localStorage.clear();
   const [userName, setName] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
 
   const handleChangeName = (e) => {
     setName(e.target.value);
