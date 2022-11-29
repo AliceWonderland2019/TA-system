@@ -72,6 +72,9 @@ export const SearchField = ( props ) => {
   }
   const handleCancel= () => {
       props.getSearch(false);
+      props.getCourseID("");
+      props.getSchedule("");
+      props.getSemester("");
       setDepartment("");
       setCatalog("");
       setSchedule("");
