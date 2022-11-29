@@ -119,7 +119,7 @@ export const Profile = () => {
             <div className="Row">
             <div className="Column">
                 {(() => {
-                if(user[0].profile_pic===null){
+                if(user[0].profile_pic===null||user[0].profile_pic===""){
                     return <img src='https://i.pinimg.com/originals/a8/57/00/a85700f3c614f6313750b9d8196c08f5.png' className="profilePic"/>
                 }
                 else{

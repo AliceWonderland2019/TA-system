@@ -35,7 +35,6 @@ export const StudentHome = () => {
     }
 
     const searchFun = (courseID,schedule,semester) => {
-        console.log(courseID,schedule,semester);
         return (
           <div className="setSearch">{ search ? <SearchResult courseID={courseID} schedule={schedule} semester={semester}/>:<JobMarket/>}
           </div>
